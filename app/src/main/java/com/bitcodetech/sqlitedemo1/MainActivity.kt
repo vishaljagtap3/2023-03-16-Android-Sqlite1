@@ -16,9 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DbUtil.rawQuery(this)
+        //DbUtil.rawQuery(this)
 
-       /* DbUtil.addProduct(
+
+      /* DbUtil.addProduct(
             this,
             106,
             "T-Shirt",
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             850,
             "Garments"
         )
-
+*/
         var products = DbUtil.getProducts(this)
         for(product in products) {
             Log.e("tag", product.toString())
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         products = DbUtil.getProducts(this)
         for(product in products) {
             Log.e("tag", product.toString())
-        }*/
+        }
 
 
        /* db = openOrCreateDatabase(

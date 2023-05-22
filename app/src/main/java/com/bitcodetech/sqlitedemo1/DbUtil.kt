@@ -9,6 +9,14 @@ import android.util.Log
 
 object DbUtil {
 
+    fun initDb(
+        context: Context
+    ) {
+        val db = getDatabase(context)
+        //db.execSQL("")
+    }
+
+
     fun addProduct(
         context: Context,
         srNo: Int,
@@ -164,11 +172,20 @@ object DbUtil {
     private fun getDatabase(
         context: Context
     ): SQLiteDatabase {
-        return context.openOrCreateDatabase(
+
+        return ProductsDBHelper(
+            context,
+            "db_ecom",
+            null,
+            2
+        ).writableDatabase
+
+
+        /*return context.openOrCreateDatabase(
             "db_ecom",
             Activity.MODE_PRIVATE,
             null
-        )
+        )*/
     }
 
     fun rawQuery(
